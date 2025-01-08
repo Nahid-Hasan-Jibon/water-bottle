@@ -1,13 +1,14 @@
-
-
-const Bottle = ({bottle}) => {
-    console.log(bottle)
-    return (
-        <div>
-            <h1>I am single bottle</h1>
-            
-        </div>
-    );
+import './Bottle.css'
+const Bottle = ({ bottle ,  handleAddToCart }) => {
+  const { name, img, price } = bottle;
+  return (
+    <div className="bottle">
+      <h3>Bottle: {name}</h3>
+      <img src={img} alt="" />
+      <p>Price: ${price}</p>
+      <button onClick={()=>handleAddToCart(bottle)}>Buy</button>
+    </div>
+  );
 };
 
 export default Bottle;
